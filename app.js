@@ -9,7 +9,7 @@ const userRoutes = require("./routes/user");
 mongoose
   .connect(
     "mongodb+srv://user:H9posegDoJWMJVXX@cluster0.bxmom.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    //nodemon server"mongodb+srv://Ina:Inulea10101@cluster0.bxmom.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    //"mongodb+srv://Ina:Inulea10101@cluster0.bxmom.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("Connexion à MongoDB réussie !"))
