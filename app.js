@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const path = require("path");
 
 const stuffRoutes = require("./routes/stuff");
 const userRoutes = require("./routes/user");
@@ -8,7 +9,6 @@ const userRoutes = require("./routes/user");
 mongoose
   .connect(
     "mongodb+srv://user:H9posegDoJWMJVXX@cluster0.bxmom.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    //nodemon server"mongodb+srv://Ina:Inulea10101@cluster0.bxmom.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     //nodemon server"mongodb+srv://Ina:Inulea10101@cluster0.bxmom.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
@@ -31,6 +31,8 @@ app.use((req, res, next) => {
 });
 
 app.use(bodyParser.json());
+
+app.use("/images", express.static(path.join(__dirname, "images")));
 
 app.use("/api/stuff", stuffRoutes);
 app.use("/api/auth", userRoutes);
